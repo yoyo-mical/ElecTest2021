@@ -63,86 +63,6 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap _1175785 {
-            get {
-                object obj = ResourceManager.GetObject("_1175785", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1180879 {
-            get {
-                object obj = ResourceManager.GetObject("_1180879", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1186172 {
-            get {
-                object obj = ResourceManager.GetObject("_1186172", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1186191 {
-            get {
-                object obj = ResourceManager.GetObject("_1186191", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1186192 {
-            get {
-                object obj = ResourceManager.GetObject("_1186192", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1186194 {
-            get {
-                object obj = ResourceManager.GetObject("_1186194", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1186196 {
-            get {
-                object obj = ResourceManager.GetObject("_1186196", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1187339 {
-            get {
-                object obj = ResourceManager.GetObject("_1187339", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap _1211102 {
             get {
                 object obj = ResourceManager.GetObject("_1211102", resourceCulture);
@@ -153,109 +73,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap _1222488 {
+        internal static System.Drawing.Bitmap Center {
             get {
-                object obj = ResourceManager.GetObject("_1222488", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1223212 {
-            get {
-                object obj = ResourceManager.GetObject("_1223212", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1229423 {
-            get {
-                object obj = ResourceManager.GetObject("_1229423", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1229440 {
-            get {
-                object obj = ResourceManager.GetObject("_1229440", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1229441 {
-            get {
-                object obj = ResourceManager.GetObject("_1229441", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1229449 {
-            get {
-                object obj = ResourceManager.GetObject("_1229449", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1229450 {
-            get {
-                object obj = ResourceManager.GetObject("_1229450", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1230180 {
-            get {
-                object obj = ResourceManager.GetObject("_1230180", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _1230664 {
-            get {
-                object obj = ResourceManager.GetObject("_1230664", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap back {
-            get {
-                object obj = ResourceManager.GetObject("back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap back1 {
-            get {
-                object obj = ResourceManager.GetObject("back1", resourceCulture);
+                object obj = ResourceManager.GetObject("Center", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +123,139 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap CosstalkG {
+            get {
+                object obj = ResourceManager.GetObject("CosstalkG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CosstalkGB {
+            get {
+                object obj = ResourceManager.GetObject("CosstalkGB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CosstalkR {
+            get {
+                object obj = ResourceManager.GetObject("CosstalkR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CosstalkRB {
+            get {
+                object obj = ResourceManager.GetObject("CosstalkRB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CosstalkRG {
+            get {
+                object obj = ResourceManager.GetObject("CosstalkRG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CrosstalkB {
+            get {
+                object obj = ResourceManager.GetObject("CrosstalkB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CrosstalkGOB {
+            get {
+                object obj = ResourceManager.GetObject("CrosstalkGOB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CrosstalkGOW {
+            get {
+                object obj = ResourceManager.GetObject("CrosstalkGOW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CrosstalkHB {
+            get {
+                object obj = ResourceManager.GetObject("CrosstalkHB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CrosstalkHW {
+            get {
+                object obj = ResourceManager.GetObject("CrosstalkHW", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CrosstalkX {
+            get {
+                object obj = ResourceManager.GetObject("CrosstalkX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap danbutingzhi {
+            get {
+                object obj = ResourceManager.GetObject("danbutingzhi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Flicker {
+            get {
+                object obj = ResourceManager.GetObject("Flicker", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,29 +283,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap Koala {
+        internal static System.Drawing.Bitmap Hgraybar {
             get {
-                object obj = ResourceManager.GetObject("Koala", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap Lighthouse {
-            get {
-                object obj = ResourceManager.GetObject("Lighthouse", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap logo {
-            get {
-                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                object obj = ResourceManager.GetObject("Hgraybar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,89 +333,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap patterns_01 {
-            get {
-                object obj = ResourceManager.GetObject("patterns-01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap patterns_07 {
             get {
                 object obj = ResourceManager.GetObject("patterns_07", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap patterns_08 {
-            get {
-                object obj = ResourceManager.GetObject("patterns-08", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap patterns_14 {
-            get {
-                object obj = ResourceManager.GetObject("patterns-14", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap patterns_141 {
-            get {
-                object obj = ResourceManager.GetObject("patterns-141", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap patterns_20 {
-            get {
-                object obj = ResourceManager.GetObject("patterns-20", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap patterns_21 {
-            get {
-                object obj = ResourceManager.GetObject("patterns-21", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap patterns_23 {
-            get {
-                object obj = ResourceManager.GetObject("patterns-23", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap patterns_24 {
-            get {
-                object obj = ResourceManager.GetObject("patterns-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,9 +353,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap patterns_32 {
+        internal static System.Drawing.Bitmap patterns01 {
             get {
-                object obj = ResourceManager.GetObject("patterns-32", resourceCulture);
+                object obj = ResourceManager.GetObject("patterns01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,9 +363,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap patterns_321 {
+        internal static System.Drawing.Bitmap patterns08 {
             get {
-                object obj = ResourceManager.GetObject("patterns-321", resourceCulture);
+                object obj = ResourceManager.GetObject("patterns08", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,9 +373,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap patterns_34 {
+        internal static System.Drawing.Bitmap patterns14 {
             get {
-                object obj = ResourceManager.GetObject("patterns-34", resourceCulture);
+                object obj = ResourceManager.GetObject("patterns14", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,9 +383,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap shutdown {
+        internal static System.Drawing.Bitmap patterns141 {
             get {
-                object obj = ResourceManager.GetObject("shutdown", resourceCulture);
+                object obj = ResourceManager.GetObject("patterns141", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -543,9 +393,109 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap system {
+        internal static System.Drawing.Bitmap patterns20 {
             get {
-                object obj = ResourceManager.GetObject("system", resourceCulture);
+                object obj = ResourceManager.GetObject("patterns20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap patterns21 {
+            get {
+                object obj = ResourceManager.GetObject("patterns21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap patterns23 {
+            get {
+                object obj = ResourceManager.GetObject("patterns23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap patterns24 {
+            get {
+                object obj = ResourceManager.GetObject("patterns24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap patterns32 {
+            get {
+                object obj = ResourceManager.GetObject("patterns32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap patterns321 {
+            get {
+                object obj = ResourceManager.GetObject("patterns321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap patterns34 {
+            get {
+                object obj = ResourceManager.GetObject("patterns34", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap powerRun {
+            get {
+                object obj = ResourceManager.GetObject("powerRun", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap start {
+            get {
+                object obj = ResourceManager.GetObject("start", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap startForm {
+            get {
+                object obj = ResourceManager.GetObject("startForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap stop {
+            get {
+                object obj = ResourceManager.GetObject("stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,6 +523,26 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Vgraybar {
+            get {
+                object obj = ResourceManager.GetObject("Vgraybar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap waku {
+            get {
+                object obj = ResourceManager.GetObject("waku", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap youhua {
             get {
                 object obj = ResourceManager.GetObject("youhua", resourceCulture);
@@ -593,9 +563,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 发送到菜单2_07 {
+        internal static System.Drawing.Bitmap 上移 {
             get {
-                object obj = ResourceManager.GetObject("发送到菜单2_07", resourceCulture);
+                object obj = ResourceManager.GetObject("上移", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -603,9 +573,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 发送到菜单3_10 {
+        internal static System.Drawing.Bitmap 下移 {
             get {
-                object obj = ResourceManager.GetObject("发送到菜单3_10", resourceCulture);
+                object obj = ResourceManager.GetObject("下移", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -613,9 +583,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 发送到菜单56_10 {
+        internal static System.Drawing.Bitmap 单步运行 {
             get {
-                object obj = ResourceManager.GetObject("发送到菜单56_10", resourceCulture);
+                object obj = ResourceManager.GetObject("单步运行", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -623,9 +593,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 取消 {
+        internal static System.Drawing.Bitmap 向右 {
             get {
-                object obj = ResourceManager.GetObject("取消", resourceCulture);
+                object obj = ResourceManager.GetObject("向右", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -643,9 +613,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 开始挂机 {
+        internal static System.Drawing.Bitmap 开始运行 {
             get {
-                object obj = ResourceManager.GetObject("开始挂机", resourceCulture);
+                object obj = ResourceManager.GetObject("开始运行", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -663,9 +633,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 系统优化_07 {
+        internal static System.Drawing.Bitmap 文件导入 {
             get {
-                object obj = ResourceManager.GetObject("系统优化_07", resourceCulture);
+                object obj = ResourceManager.GetObject("文件导入", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -673,9 +643,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 系统优化_09 {
+        internal static System.Drawing.Bitmap 文件导出 {
             get {
-                object obj = ResourceManager.GetObject("系统优化_09", resourceCulture);
+                object obj = ResourceManager.GetObject("文件导出", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -683,9 +653,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 系统优化_11 {
+        internal static System.Drawing.Bitmap 暂停 {
             get {
-                object obj = ResourceManager.GetObject("系统优化_11", resourceCulture);
+                object obj = ResourceManager.GetObject("暂停", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -693,9 +663,9 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 系统优化_13 {
+        internal static System.Drawing.Bitmap 清除 {
             get {
-                object obj = ResourceManager.GetObject("系统优化_13", resourceCulture);
+                object obj = ResourceManager.GetObject("清除", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -713,9 +683,19 @@ namespace Testplan.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap 解除锁定 {
+        internal static System.Drawing.Bitmap 行注释 {
             get {
-                object obj = ResourceManager.GetObject("解除锁定", resourceCulture);
+                object obj = ResourceManager.GetObject("行注释", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 行注释1 {
+            get {
+                object obj = ResourceManager.GetObject("行注释1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

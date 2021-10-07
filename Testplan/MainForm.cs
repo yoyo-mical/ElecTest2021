@@ -12,11 +12,24 @@ namespace Testplan
 {
     public partial class MainForm : Form
     {
-        
+
         //AutoSizeFormClass asc = new AutoSizeFormClass();
+       
         public MainForm()
         {
             InitializeComponent();
+
+            //StartForm startForm = new StartForm();
+
+            //startForm.Show();
+            //startForm.Visible = true;
+
+            //System.Threading.Thread.Sleep(5000);
+
+            ////startForm.Close();
+
+            this.WindowState = FormWindowState.Minimized;
+
 
             var f2 = new UART() { TabText = "UART" };
             f2.Show(this.dockPanel1);
@@ -27,11 +40,11 @@ namespace Testplan
             ca310.Show(this.dockPanel1);
             ca310.DockTo(this.dockPanel1,DockStyle.Left);
 
-            var armcode = new ARMCode() { TabText = "ARMCode" };
+            var  armcode = new ARMCode() { TabText = "ARMCode" };
             armcode.Show(this.dockPanel1, DockState.Document);
            
            var control = new Control() { TabText = "Control" };
-            control.Show(armcode.Pane,DockAlignment.Bottom,0.5);
+            control.Show(armcode.Pane,DockAlignment.Bottom,0.48);
 
             var datachart = new DataChart() { TabText = "DataChart" };
             datachart.Show(armcode.Pane, DockAlignment.Right, 0.53);
@@ -40,9 +53,17 @@ namespace Testplan
             pattern.Show(this.dockPanel1);
             pattern.DockTo(this.dockPanel1, DockStyle.Right);
             pattern.DockPanel.DockRightPortion = 0.25;
+
+            
+
+  
+
+            this.MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
+            this.WindowState = FormWindowState.Maximized;
+
         }
         public static PictureBox temp = new PictureBox();
-        public void ImageSwitch(object sender, int n, int ns)
+        public static void ImageSwitch(object sender, int n, int ns)
         {
             temp = (PictureBox)sender;
             switch (n)
@@ -83,6 +104,42 @@ namespace Testplan
                             temp.SizeMode = PictureBoxSizeMode.StretchImage;
                         break;
                     }
+                case 3:
+                    {
+                        temp.Image = null;
+                        temp.BackgroundImage = null;
+                        if (ns == 0)
+                            temp.Image = Properties.Resources.start;
+                        temp.SizeMode = PictureBoxSizeMode.StretchImage;
+                        if (ns == 1)
+                          temp.Image = Properties.Resources.stop;
+                          temp.SizeMode = PictureBoxSizeMode.StretchImage;
+                        break;
+                    }
+                case 4:
+                    {
+                        temp.Image = null;
+                        temp.BackgroundImage = null;
+                        if (ns == 0)
+                            temp.Image = Properties.Resources.开始运行;
+                        temp.SizeMode = PictureBoxSizeMode.StretchImage;
+                        if (ns == 1)
+                            temp.Image = Properties.Resources.暂停;
+                        temp.SizeMode = PictureBoxSizeMode.StretchImage;
+                        break;
+                    }
+                case 5:
+                    {
+                        temp.Image = null;
+                        temp.BackgroundImage = null;
+                        if (ns == 0)
+                            temp.Image = Properties.Resources.单步运行;
+                        temp.SizeMode = PictureBoxSizeMode.StretchImage;
+                        if (ns == 1)
+                            temp.Image = Properties.Resources.danbutingzhi;
+                        temp.SizeMode = PictureBoxSizeMode.StretchImage;
+                        break;
+                    }
             }
         }
 
@@ -113,7 +170,8 @@ namespace Testplan
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
-        { 
+        {
+            this.MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
             this.WindowState = FormWindowState.Maximized;
         }
         private void MainForm_SizeChanged(object sender, EventArgs e)
@@ -156,6 +214,11 @@ namespace Testplan
         }
 
         private void dockPanel1_ActiveContentChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

@@ -37,7 +37,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>3</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -49,6 +49,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\图标 %28168%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Admesy, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -104,6 +107,7 @@
     <Compile Include="DataChart.Designer.cs">
       <DependentUpon>DataChart.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormShare.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +122,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UART.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +163,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UART.resx">
       <DependentUpon>UART.cs</DependentUpon>
     </EmbeddedResource>
@@ -388,6 +401,102 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\行注释.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\行注释.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\清除.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\向右.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\开始运行.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\暂停.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\单步运行.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powerRun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\文件导出.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\文件导入.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\上移.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\下移.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\danbutingzhi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\startForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flicker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CosstalkG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CosstalkGB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CosstalkR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CosstalkRB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CosstalkRG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrosstalkB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrosstalkGOB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrosstalkGOW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrosstalkHB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrosstalkHW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CrosstalkX.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\图片1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waku.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vgraybar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hgraybar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

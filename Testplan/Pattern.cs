@@ -19,12 +19,12 @@ namespace Testplan
             InitializeComponent();
         }
 
-        private void CodeSend()
+        private void CodeSend(string str)
         {
             if (UART.isOpen == true)
             {
                 int n = 0;
-                patterncode();
+                
                 try
                 {
                     if (UART.isHex)
@@ -62,6 +62,7 @@ namespace Testplan
 
 
         private int a = 0;
+        private int step = 10;
         private PictureBox boxtemp = new PictureBox();
         private void imagesizechange(object sender)
         {
@@ -70,23 +71,33 @@ namespace Testplan
             {
                 case 0:
                     {
-                        boxtemp.Height = 110;
-                        boxtemp.Width = 80;
+                        int x = boxtemp.Location.X;
+                        int y = boxtemp.Location.Y;
+                        boxtemp.Location = new Point(x - step / 2, y - step / 2);
+                        int w = boxtemp.Width;
+                        int h = boxtemp.Height;
+                        boxtemp.Width = w + step;
+                        boxtemp.Height = h + step;
                         break;
                     }
                 case 1:
                     {
-                        boxtemp.Height = 100;
-                        boxtemp.Width = 70;
+                        int x = boxtemp.Location.X;
+                        int y = boxtemp.Location.Y;
+                        boxtemp.Location = new Point(x + step / 2, y + step / 2);
+                        int w = boxtemp.Width;
+                        int h = boxtemp.Height;
+                        boxtemp.Width = w - step;
+                        boxtemp.Height = h - step;
                         break;
                     }
             }         
          }
 
-        private string codetext,ptnNum="00",varR="00",varG="00", varB="00",strcode, k;
+        private string codetext,ptnNum="00",varR="00",varG="00", varB="00",strcode,contcode, k;
         private string  FinalptnNum = "00",FinalvarR = "00", FinalvarG = "00", FinalvarB = "00";
         //private byte[] hexptnNum, hexvarR, hexvarG, hexvarB;
-        private int intptnNum, intvarR, intvarG, intvarB,b;
+        private int intptnNum, intvarR, intvarG, intvarB,intvarGray,b;
 
         private Label labeltemp = new Label();
 
@@ -104,6 +115,41 @@ namespace Testplan
             //labeltemp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         }
 
+        private void label7_MouseEnter(object sender, EventArgs e)
+        {
+            labeltemp = (Label)sender;
+            labeltemp.BackColor = Color.FromArgb(255, 200, 200, 200);
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (k == "0")
+                {
+                    numericUpDown1.Value = numericUpDown5.Value;
+                    numericUpDown2.Value = numericUpDown5.Value;
+                    numericUpDown3.Value = numericUpDown5.Value;
+
+                    intvarGray = Convert.ToInt16(numericUpDown5.Value);
+                    FinalvarR = intvarGray.ToString("X2");
+                    FinalvarG = FinalvarR;
+                    FinalvarB = FinalvarR;
+
+                    patterncode();
+                    CodeSend(strcode);
+                }
+                else
+                {
+                    MessageBox.Show("此画面不支持灰阶调整");
+                }
+                
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
@@ -118,15 +164,10 @@ namespace Testplan
         private void label6_Click(object sender, EventArgs e)
         {
             intvarR = Convert.ToInt32(numericUpDown4.Value);
-            if (intvarR < 10)
-            {
-                FinalvarR = "0" + Convert.ToString(intvarR, 16);
-            }
-            else
-            {
-                FinalvarR = Convert.ToString(intvarR, 16);
-            }
-            CodeSend();
+            FinalvarR = intvarR.ToString("X2");
+
+            patterncode();
+            CodeSend(strcode);
         }
 
         private void label5_MouseEnter(object sender, EventArgs e)
@@ -143,42 +184,24 @@ namespace Testplan
 
         private void label3_Click(object sender, EventArgs e)
         {
-        
+            try
+            {
+                intvarR = Convert.ToInt32(numericUpDown1.Value);
+                FinalvarR = intvarR.ToString("X2");
 
-            intvarR = Convert.ToInt32(numericUpDown1.Value);
-            if (intvarR < 16)
-            {
-                FinalvarR = "0" + Convert.ToString(intvarR, 16);
+                intvarG = Convert.ToInt32(numericUpDown2.Value);
+                FinalvarG = intvarG.ToString("X2");
+
+                intvarB = Convert.ToInt32(numericUpDown3.Value);
+                FinalvarB = intvarB.ToString("X2");
+
+                patterncode();
+                CodeSend(strcode);
             }
-            else
+            catch (Exception)
             {
-                FinalvarR = Convert.ToString(intvarR, 16);
             }
             
-            
-            intvarG = Convert.ToInt32(numericUpDown2.Value);
-            if (intvarG < 16)
-            {
-                FinalvarG = "0" + Convert.ToString(intvarG, 16);
-            }
-            else
-            {
-                FinalvarG = Convert.ToString(intvarG, 16);
-            }
-
-            intvarB = Convert.ToInt32(numericUpDown3.Value);
-            if (intvarB < 16)
-            {
-                FinalvarB= "0" + Convert.ToString(intvarB, 16);
-            }
-            else
-            {
-                FinalvarB = Convert.ToString(intvarB, 16);
-            }
-
-            CodeSend();
-            //labeltemp = (Label)sender;
-            //labeltemp.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
         }
 
         private void intcode()
@@ -194,21 +217,25 @@ namespace Testplan
                 case 0:
                     {
                         strcode = "AA 02" + "00" + FinalptnNum + "00" + FinalvarR + "00" + FinalvarG + "00" + FinalvarB + "0F 00 12 48";
+                        contcode = "00 "+ FinalptnNum+" " + FinalvarR + " " + FinalvarG + " " + FinalvarB;
                         break;
                     }
                 case 1:
                     {
                         strcode = "AA 02" + "00" + FinalptnNum + "00" + FinalvarR + "0F 00 12 48";
+                        contcode = "01 " + FinalptnNum + " " + FinalvarR;
                         break;
                     }
                 case 2:
                     {
                         strcode = "AA 02" + "00" + FinalptnNum + "00" + FinalvarR +"00"+ FinalvarG + "0F 00 12 48";
+                        contcode = "02 "+FinalptnNum + " " + FinalvarR + " " + FinalvarG;
                         break;
                     }
                 case 3:
                     {
                         strcode = "AA 02" + "00" + FinalptnNum + "0F 00 12 48";
+                        contcode = "03 " + FinalptnNum;
                         break;
                     }
             }
@@ -220,17 +247,20 @@ namespace Testplan
             FinalvarR = varR;
             FinalvarG = varG;
             FinalvarB = varB;
-
-            CodeSend();
+            patterncode();
+            CodeSend(strcode);
+            Control.fs.strEdit(contcode);
             if (b == 0)
             {
                 numericUpDown1.Enabled = true;
                 numericUpDown2.Enabled = true;
                 numericUpDown3.Enabled = true;
                 numericUpDown4.Enabled = true;
+                numericUpDown5.Enabled = true;
                 numericUpDown1.Value = intvarR;
                 numericUpDown2.Value = intvarG;
                 numericUpDown3.Value = intvarB;
+                numericUpDown5.Value = 0;
                 numericUpDown4.Value = 0;
                 numericUpDown4.Enabled = false;
             }
@@ -240,6 +270,7 @@ namespace Testplan
                 numericUpDown2.Enabled = true;
                 numericUpDown3.Enabled = true;
                 numericUpDown4.Enabled = true;
+                numericUpDown5.Enabled = true;
                 numericUpDown1.Value = 0;
                 numericUpDown2.Value = 0;
                 numericUpDown3.Value = 0;
@@ -248,6 +279,7 @@ namespace Testplan
                 numericUpDown2.Enabled = false;
                 numericUpDown3.Enabled = false;
                 numericUpDown4.Enabled = false;
+                numericUpDown5.Enabled = false;
             }
             else 
             {
@@ -255,6 +287,7 @@ namespace Testplan
                 numericUpDown2.Enabled = true;
                 numericUpDown3.Enabled = true;
                 numericUpDown4.Enabled = true;
+                numericUpDown5.Enabled = true;
                 numericUpDown1.Value = 0;
                 numericUpDown2.Value = 0;
                 numericUpDown3.Value = 0;
@@ -262,6 +295,7 @@ namespace Testplan
                 numericUpDown1.Enabled = false;
                 numericUpDown2.Enabled = false;
                 numericUpDown3.Enabled = false;
+                numericUpDown5.Enabled = false;
             }
 
         }

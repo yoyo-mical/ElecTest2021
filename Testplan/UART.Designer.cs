@@ -223,7 +223,6 @@
             this.rbnSendStr.Name = "rbnSendStr";
             this.rbnSendStr.Size = new System.Drawing.Size(62, 21);
             this.rbnSendStr.TabIndex = 0;
-            this.rbnSendStr.TabStop = true;
             this.rbnSendStr.Text = "字符串";
             this.rbnSendStr.UseVisualStyleBackColor = true;
             // 
@@ -273,6 +272,7 @@
             // rbnSendHex
             // 
             this.rbnSendHex.AutoSize = true;
+            this.rbnSendHex.Checked = true;
             this.rbnSendHex.Location = new System.Drawing.Point(9, 27);
             this.rbnSendHex.Name = "rbnSendHex";
             this.rbnSendHex.Size = new System.Drawing.Size(50, 21);

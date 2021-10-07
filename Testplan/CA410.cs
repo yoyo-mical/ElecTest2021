@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Runtime.InteropServices;
-using CA200SRVRLib;
+//using CA200SRVRLib;
 using CASDK2;
 using System.Threading;
 
@@ -50,6 +50,7 @@ namespace Testplan
 
         //public static double LvValue;
         public static double Lv = 0.0;
+      
         public static double sx = 0.0;
         public static double sy = 0.0;
         public static double X = 0.0;
@@ -119,7 +120,6 @@ namespace Testplan
 
             try
             {
-                
                 Measurement();                 
                 Ca_Lv.Text = Convert.ToString(Lv);
                 Ca_sx.Text = Convert.ToString(sx);
@@ -129,8 +129,6 @@ namespace Testplan
                 Ca_Z.Text = Convert.ToString(Z);
                 Flicker.Text = Convert.ToString(JEITA);
                 F.Text = Convert.ToString(FMA);
-
-
             }
             catch (Exception er)
             {
@@ -263,7 +261,7 @@ namespace Testplan
         ///[Measurement]
         ///This method measure color and flicker(JEITA and FMA) by CH1 
         ///</summary>
-        private static void Measurement()
+        public static void Measurement()
         {
             //SetZeroCalEvent();
             int chnum = 0;      //CalibrationCH : 1
@@ -295,9 +293,12 @@ namespace Testplan
 
 
             //LvValue = Lv;
-
-
-
+            Lv = Math.Round(Lv, 2);
+            sx = Math.Round(sx, 2);
+            sy = Math.Round(sy, 2);
+            X= Math.Round(X, 2);
+            Y= Math.Round(Y, 2);
+            Z=Math.Round(Z, 2);
 
             GetErrorMessage(objCa.put_DisplayMode(MODE_JEITA)); //Set mode:Flicker JEITA
             GetErrorMessage(objCa.Measure());                   //JEITA measurement
@@ -305,6 +306,9 @@ namespace Testplan
             //Get JEITA result
 
             GetErrorMessage(objProbe.get_FlckrJEITA(ref JEITA));
+
+            JEITA = Math.Round(JEITA, 2);
+            
 
             GetErrorMessage(objCa.put_DisplayMode(MODE_FMA));   //Set mode:Flicker FMA
             GetErrorMessage(objCa.Measure());                   //FMA measurement
@@ -318,6 +322,7 @@ namespace Testplan
 
             //GetErrorMessage(objCa.put_DisplayMode(MODE_Lvxy));  //Set mode:Color Lvxy
 
+            FMA = Math.Round(FMA, 2);
 
 
 
@@ -577,14 +582,13 @@ namespace Testplan
                 {
 
                     Console.WriteLine("result: Success");
-                    double Lv = 0.0;
+                    double Lv = 0.0;               
                     double sx = 0.0;
                     double sy = 0.0;
                     double X = 0.0;
                     double Y = 0.0;
-                    double Z = 0.0;
-                    double JEITA = 0.0;
-                    double FMA = 0.0;
+                    double Z = 0.0;               
+                    double FMA = 0.0;                   
                     GetErrorMessage(objProbe.get_Lv(ref Lv));
                     GetErrorMessage(objProbe.get_sx(ref sx));
                     GetErrorMessage(objProbe.get_sy(ref sy));
@@ -831,6 +835,36 @@ namespace Testplan
         private void Ca_Lv_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public static string FMAcheck,JEITAcheck = "true";
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            {
+                JEITAcheck = "true";
+                FMAcheck = "false";
+            }
+            else
+            {
+                JEITAcheck = "false";
+        
+            }
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                FMAcheck = "true";
+                JEITAcheck = "false";
+            }
+            else
+            {
+                FMAcheck = "false";
+            }
         }
     }
 }
