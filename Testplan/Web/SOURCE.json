@@ -1,0 +1,10 @@
+{
+  "source": "design-preview/index.html",
+  "sha256": "df118881578c1d2a715890e9b73b9b4bf93c4ab2b450520911b1899b6467987b",
+  "builder": "tools/build-web-ui.py",
+  "runtimeScripts": [
+    "patterns.js",
+    "native.js"
+  ],
+  "previewSimulationIncluded": false
+}

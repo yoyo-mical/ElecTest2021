@@ -1,3 +1,5 @@
+> 历史记录：本文描述已被替换的原生布局方案。当前入口、框架版本、授权页及构建方式以 [WebView2 接入说明](WEBVIEW-INTEGRATION.md) 为准。
+
 # ElecTest2026 原生界面与授权接入
 
 当前为源码实现检查点，不是已完成 Windows/仪器验收的安装包。HTML 设计预览仍在 design-preview；原生界面在 Testplan/Modern，以重新布局现有控件的方式接入，不复制一套测量流程。

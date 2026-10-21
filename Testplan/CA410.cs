@@ -275,6 +275,8 @@ namespace Testplan
         public static void Measurement()
         {
             if (!AppLicense.AllowOperation()) return;
+            sdkOperationFailed = false;
+            webMeasurementAvailable = false;
             //SetZeroCalEvent();
             int chnum = 0;      //CalibrationCH : 1
             GetErrorMessage(objMemory.put_ChannelNO(chnum));
@@ -337,6 +339,9 @@ namespace Testplan
             FMA = Math.Round(FMA, 2);
 
 
+
+            if (sdkOperationFailed) throw new InvalidOperationException("CA410 测量返回错误，未发布本次读数。");
+            webMeasurementAvailable = true;
 
         }
 

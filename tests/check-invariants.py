@@ -12,6 +12,6 @@ for file in ['UART.cs','ARMCode.cs','Control.cs','Pattern.cs','CA410.cs']:
 for file,method in [('UART.cs','HexSend'),('Control.cs','controlCodeRun'),('ARMCode.cs','saveCsv'),('Pattern.cs','CodeSend'),('CA410.cs','Measurement')]:
  s=(root/'Testplan'/file).read_text(encoding='utf-8-sig');assert re.search(r'void '+method+r'\([^\n]*\)\s*\{\s*if \(!AppLicense.AllowOperation\(\)\) return;',s),(file,method)
 print('PASS authorization guards at send / recipe / save / pattern / measurement entry points')
-project=(root/'Testplan/ElecTest2026.csproj').read_text(encoding='utf-8-sig');assert 'v4.5.2' in project
-main=(root/'Testplan/Modern/MainWorkspace.cs').read_text();assert 'await AppLicense.RefreshAsync' in main and main.index('await AppLicense.RefreshAsync')<main.index('if(!workspaceBuilt)BuildAuthorizedWorkspace()')
-print('PASS net452 retained and authorization awaited before hardware workspace creation')
+project=(root/'Testplan/ElecTest2026.csproj').read_text(encoding='utf-8-sig');assert 'v4.8' in project
+main=(root/'Testplan/WebHost/WebWorkspaceForm.cs').read_text();assert 'await AppLicense.RefreshAsync' in main and main.index('await AppLicense.RefreshAsync')<main.index('backend=new WorkspaceBackend()');assert 'new WebWorkspaceForm()' in (root/'Testplan/Program.cs').read_text(encoding='utf-8-sig');assert 'e.Source!=AppUrl' in main and 'AreHostObjectsAllowed=false' in main
+print('PASS net48 WebView2 entry, trusted message source, no host objects, and authorization before backend creation')

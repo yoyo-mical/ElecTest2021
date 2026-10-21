@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Testplan</RootNamespace>
     <AssemblyName>ElecTest2026</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <VendorSdkDirectory Condition="'$(VendorSdkDirectory)' == ''">$(MSBuildProjectDirectory)\bin\Debug</VendorSdkDirectory>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -66,6 +66,8 @@
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="Microsoft.Web.WebView2.Core"><HintPath>..\packages\Microsoft.Web.WebView2.1.0.4258.31\lib\net462\Microsoft.Web.WebView2.Core.dll</HintPath><Private>True</Private></Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms"><HintPath>..\packages\Microsoft.Web.WebView2.1.0.4258.31\lib\net462\Microsoft.Web.WebView2.WinForms.dll</HintPath><Private>True</Private></Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -139,6 +141,11 @@
       <DependentUpon>UART.cs</DependentUpon>
     </Compile>
     <Compile Include="Win32.cs" />
+    <Compile Include="WebHost\BridgeModels.cs" />
+    <Compile Include="WebHost\BackendAdapters.cs" />
+    <Compile Include="WebHost\WorkspaceBackend.cs" />
+    <Compile Include="WebHost\WebWorkspaceForm.cs" />
+    <Compile Include="WebHost\BrowserRuntime.cs" />
     <Compile Include="Authorization\AppLicense.cs" />
     <Compile Include="Authorization\Shared\Licensing.cs" />
     <Compile Include="Authorization\Shared\IssuerPublicKey.cs" />
@@ -196,6 +203,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web\**\*"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
+    <Content Include="..\packages\Microsoft.Web.WebView2.1.0.4258.31\runtimes\win-x86\native\WebView2Loader.dll"><Link>WebView2Loader.dll</Link><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1175785.png" />
