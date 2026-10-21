@@ -1,23 +1,21 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Security.Cryptography;
 
 namespace Testplan {
     // Integrity raises the cost of replacing local UI scripts. It is not an external root of trust.
     internal static class WebIntegrity {
         private static readonly object Sync = new object();
-        private static readonly Stopwatch Clock = Stopwatch.StartNew();
-        private static long nextCheck;
+        private static bool verified;
         private static bool failed;
         internal static void Ensure() {
             lock (Sync) {
                 if (failed) throw new InvalidOperationException("程序界面完整性校验失败，请重新安装可信发布包。");
-                if (nextCheck > Clock.ElapsedMilliseconds) return;
+                if (verified) return;
                 try {
                     VerifyDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Web"));
-                    nextCheck = Clock.ElapsedMilliseconds + 30000;
+                    verified = true;
                 } catch { failed = true; throw; }
             }
         }

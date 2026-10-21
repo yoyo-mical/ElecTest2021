@@ -13,7 +13,15 @@ class WebBackendChecks {
     [STAThread]static void Main(string[] args){
         Application.EnableVisualStyles();Application.SetCompatibleTextRenderingDefault(false);WeifenLuo.WinFormsUI.Docking.PatchController.EnableAll=true;
         Denied(()=>new WorkspaceBackend(),"backend cannot initialize before authorization");
+        Denied(()=>AppLicense.RefreshAsync(args[0]+".missing").GetAwaiter().GetResult(),"missing startup license rejected");
         AppLicense.RefreshAsync(args[0]).GetAwaiter().GetResult();
+        System.IO.File.Delete(args[0]);
+        AppLicense.Ensure(); AppLicense.RefreshAsync(args[0]).GetAwaiter().GetResult();
+        Check(AppLicense.Edition=="Standard","startup admission survives unavailable list without revalidation");
+        var webFile=System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Web","native.js");
+        var originalWeb=System.IO.File.ReadAllBytes(webFile);
+        try { System.IO.File.AppendAllText(webFile,"\n// runtime test"); WebIntegrity.Ensure(); AppLicense.Ensure(); Check(true,"no repeated integrity check during admitted process"); }
+        finally { System.IO.File.WriteAllBytes(webFile,originalWeb); }
         using(var backend=new WorkspaceBackend()){
             var state=backend.Snapshot();Check(state.authorized&&state.points.Count==0&&state.script==""&&state.recipe=="","backend starts without seeded scripts, curves or recipes");
             Check(state.readings.Values.All(v=>string.IsNullOrEmpty(v)),"unmeasured instrument fields are empty");
@@ -27,12 +35,12 @@ class WebBackendChecks {
             DataChart.CurrentTest="VCOM";DataChart.fs.intEdit(0);DataChart.fs.intstrstrEdit(0,"10","12.5");state=backend.Snapshot();Check(state.points.Count==1&&state.points[0].x=="10"&&state.points[0].y==12.5,"original chart event bus forwards exact sample values");
             var encoded=WebJson.Encode(new WebReply{id="safe",ok=true,state=state});Check(WebJson.Decode<WebReply>(encoded).state.points[0].y==12.5,"JSON snapshot round-trip preserves sample");
             var hostile=Request("set",new Dictionary<string,string>{{"arm.script","</script><script>alert(1)</script>"}});reply=backend.Execute(hostile);Check(reply.state.script==hostile.args.fields["arm.script"],"script-like editor text stays data in C#");
-            AppLicense.Lock("test expiry");Denied(()=>backend.Execute(Request("recipe.run")),"expired authorization blocks execution");Denied(()=>backend.Snapshot(),"expired authorization blocks result publication");backend.Stop();Check(true,"stop remains callable after expiry");
+            AppLicense.Lock("test shutdown");Denied(()=>backend.Execute(Request("recipe.run")),"explicit shutdown lock blocks execution");Denied(()=>backend.Snapshot(),"explicit shutdown lock blocks result publication");backend.Stop();Check(true,"stop remains callable after explicit lock");
         }
         intdelegate reset = i => {}; intstrstrdelegate sample = (i,x,y) => {};
         DataChart.fs.intevent += reset; DataChart.fs.intstrstrevent += sample;
         try { DataChart.fs.intEdit(0); DataChart.fs.intstrstrEdit(0,"10","12.5"); Check(true,"disposed backend no longer checks revoked authorization on chart events"); }
         finally { DataChart.fs.intevent -= reset; DataChart.fs.intstrstrevent -= sample; }
-        AppLicense.Dispose();Console.WriteLine("PASS "+count+" native bridge/backend checks; no device commands or SDK measurements executed");
+        AppLicense.Dispose();Denied(()=>AppLicense.Ensure(),"disposed application rejects access");Console.WriteLine("PASS "+count+" native bridge/backend checks; no device commands or SDK measurements executed");
     }
 }

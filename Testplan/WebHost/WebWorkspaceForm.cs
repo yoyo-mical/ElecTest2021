@@ -11,8 +11,6 @@ namespace Testplan {
         private WebView2 browser;
         private WorkspaceBackend backend;
         private readonly Timer stateTimer=new Timer{Interval=500};
-        private readonly Timer authorizationTimer=new Timer{Interval=60000};
-        private DateTime refreshAt;
         private string path="",lastError="";
         private bool closed,refreshing,ready,authorized;
         private readonly Label failure=new Label{Dock=DockStyle.Fill,TextAlign=ContentAlignment.MiddleCenter,Visible=false,Padding=new Padding(30)};
@@ -22,9 +20,8 @@ namespace Testplan {
             Controls.Add(failure);AppLicense.Locked+=OnLocked;
             Shown+=async(s,e)=>await StartBrowser();
             stateTimer.Tick+=(s,e)=>PushState();
-            authorizationTimer.Tick+=async(s,e)=>{if(closed||refreshing||backend==null)return;try{AppLicense.Ensure();if(DateTime.UtcNow>=refreshAt&&!backend.Busy)await RefreshAuthorization(path,false);}catch(Exception ex){OnLocked(ex.Message);}};
             FormClosing+=(s,e)=>{if(backend!=null&&backend.Busy){backend.Stop();e.Cancel=true;lastError="正在停止当前操作，请待本次设备调用返回后再关闭。";PushState();}};
-            FormClosed+=(s,e)=>{closed=true;stateTimer.Dispose();authorizationTimer.Dispose();AppLicense.Locked-=OnLocked;if(backend!=null)backend.Dispose();AppLicense.Dispose();if(browser!=null)browser.Dispose();};
+            FormClosed+=(s,e)=>{closed=true;stateTimer.Dispose();AppLicense.Locked-=OnLocked;if(backend!=null)backend.Dispose();AppLicense.Dispose();if(browser!=null)browser.Dispose();};
         }
         private async Task StartBrowser(){
             try{
@@ -51,15 +48,16 @@ namespace Testplan {
                 core.WebResourceRequested+=(s,e)=>{Uri uri;if(!Uri.TryCreate(e.Request.Uri,UriKind.Absolute,out uri)||uri.Scheme!="https"||uri.Host!="electest.local"){e.Response=core.Environment.CreateWebResourceResponse(new MemoryStream(),403,"Forbidden","");}};
                 core.WebMessageReceived+=OnMessage;
                 core.NavigationCompleted+=(s,e)=>{ready=e.IsSuccess;if(!ready)ShowFailure("本地界面加载失败："+e.WebErrorStatus);};
-                core.Navigate(AppUrl);browser.BringToFront();stateTimer.Start();authorizationTimer.Start();
+                core.Navigate(AppUrl);browser.BringToFront();stateTimer.Start();
             }catch(Exception ex){ShowFailure(ex.Message+(ex.InnerException!=null?"\n"+ex.InnerException.Message:""));}
         }
         private void ShowFailure(string message){failure.Text=message;failure.Visible=true;failure.BringToFront();}
         private async Task RefreshAuthorization(string newPath,bool save){
+            if(authorized)return; // Startup-only policy; no revalidation while running.
             if(refreshing)throw new InvalidOperationException("授权检查正在进行。");
             if(backend!=null&&backend.Busy)throw new InvalidOperationException("请先停止配方再检查授权。");
             refreshing=true;
-            try{await AppLicense.RefreshAsync(newPath);if(closed)return;if(save)AppLicense.SavePath(newPath);if(backend==null)backend=new WorkspaceBackend();authorized=true;path=newPath;refreshAt=DateTime.UtcNow.AddHours(1);lastError="";}
+            try{await AppLicense.RefreshAsync(newPath);if(closed)return;if(save)AppLicense.SavePath(newPath);if(backend==null)backend=new WorkspaceBackend();authorized=true;path=newPath;lastError="";}
             catch(Exception ex){AppLicense.Lock(ex.Message);throw;}
             finally{refreshing=false;}
         }
