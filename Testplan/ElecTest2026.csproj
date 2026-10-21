@@ -7,8 +7,9 @@
     <ProjectGuid>{FE3FCCE1-11F4-4C57-93DB-DEB561C4429B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Testplan</RootNamespace>
-    <AssemblyName>Testplan</AssemblyName>
+    <AssemblyName>ElecTest2026</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <VendorSdkDirectory Condition="'$(VendorSdkDirectory)' == ''">$(MSBuildProjectDirectory)\bin\Debug</VendorSdkDirectory>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile>
@@ -41,7 +42,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -51,17 +52,20 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\图标 %28168%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Admesy, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Admesy.dll</HintPath>
+      <HintPath>$(VendorSdkDirectory)\Admesy.dll</HintPath>
     </Reference>
     <Reference Include="CASDK2Net, Version=1.0.7332.25097, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\CASDK2Net.dll</HintPath>
+      <HintPath>$(VendorSdkDirectory)\CASDK2Net.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -135,6 +139,14 @@
       <DependentUpon>UART.cs</DependentUpon>
     </Compile>
     <Compile Include="Win32.cs" />
+    <Compile Include="Authorization\AppLicense.cs" />
+    <Compile Include="Authorization\Shared\Licensing.cs" />
+    <Compile Include="Authorization\Shared\IssuerPublicKey.cs" />
+    <Compile Include="Authorization\Shared\AuthorizationHistory.cs" />
+    <Compile Include="Modern\WorkspaceStyle.cs" />
+    <Compile Include="Modern\PanelLayouts.cs" />
+    <Compile Include="Modern\ChartWorkspace.cs" />
+    <Compile Include="Modern\MainWorkspace.cs" />
     <EmbeddedResource Include="ARMCode.resx">
       <DependentUpon>ARMCode.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +182,8 @@
       <DependentUpon>UART.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="settings.json"><CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory></None>
+    <None Include="app.manifest" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

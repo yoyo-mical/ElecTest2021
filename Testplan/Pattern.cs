@@ -17,10 +17,12 @@ namespace Testplan
         public Pattern()
         {
             InitializeComponent();
+            ApplyWorkspaceLayout();
         }
 
         private void CodeSend(string str)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (UART.isOpen == true)
             {
                 int n = 0;
@@ -123,6 +125,7 @@ namespace Testplan
 
         private void label7_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             try
             {
                 if (k == "0")
@@ -163,6 +166,7 @@ namespace Testplan
 
         private void label6_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             intvarR = Convert.ToInt32(numericUpDown4.Value);
             FinalvarR = intvarR.ToString("X2");
 
@@ -184,6 +188,7 @@ namespace Testplan
 
         private void label3_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             try
             {
                 intvarR = Convert.ToInt32(numericUpDown1.Value);
@@ -243,6 +248,9 @@ namespace Testplan
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
+            pictureBox1_MouseEnter_1(sender, EventArgs.Empty);
+            UpdateSelectedPreview((PictureBox)sender);
             FinalptnNum = ptnNum;
             FinalvarR = varR;
             FinalvarG = varG;
@@ -303,7 +311,7 @@ namespace Testplan
         private void pictureBox1_MouseEnter_1(object sender, EventArgs e)
         {
             a = 0;
-            imagesizechange(sender);
+            // Stable layout: no hover resizing.
             codetext = boxtemp.Tag.ToString();
             string[] codearray = codetext.Split(',');
             for (int i = 0; i <= codearray.Length; i++)
@@ -368,7 +376,7 @@ namespace Testplan
         private void pictureBox1_MouseLeave_1(object sender, EventArgs e)
         {
             a = 1;
-            imagesizechange(sender); 
+            // Stable layout: no hover resizing.
         }
 
         private void pictureBox2_MouseLeave(object sender, EventArgs e)

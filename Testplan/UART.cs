@@ -33,6 +33,7 @@ namespace Testplan
         public UART()
         {
             InitializeComponent();
+            ApplyWorkspaceLayout();
         }
         private void UART_SizeChanged(object sender, EventArgs e)
         {
@@ -213,6 +214,7 @@ namespace Testplan
         {
             if (isOpen == false)
             {
+                if (!AppLicense.AllowOperation()) return;
                 if (!CheckPortSetting())
                 {
                     MessageBox.Show("串口未设置", "错误提示");
@@ -227,6 +229,7 @@ namespace Testplan
                 {
                     sp.Open();
                     isOpen = true;
+                    UpdateConnectionState();
                     btnOpenCom.Text = "关闭串口";
                     cbxComPort.Enabled = false;
                     cbxBaudRate.Enabled = false;
@@ -236,6 +239,7 @@ namespace Testplan
                 }
                 catch (Exception)
                 {
+                    UpdateConnectionState("串口操作失败");
                     isSetProperty = false;
                     isOpen = false;
                     MessageBox.Show("串口无效或已被占用", "错误提示");
@@ -247,6 +251,7 @@ namespace Testplan
                 {
                     sp.Close();
                     isOpen = false;
+                    UpdateConnectionState();
                     btnOpenCom.Text = "打开串口";
                     cbxComPort.Enabled = true;
                     cbxBaudRate.Enabled = true;
@@ -262,6 +267,7 @@ namespace Testplan
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (isOpen == true)
             {
                 int n = 0;
@@ -309,6 +315,7 @@ namespace Testplan
      
         public static void HexSend(string strSend)
         {
+            if (!AppLicense.AllowOperation()) return;
             string str = strSend.Replace(" ", "");//去除所有空格
             str = str.Replace(",", "");//去除所有逗号
             ArrayList SendCharList = new ArrayList();

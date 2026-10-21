@@ -1,0 +1,11 @@
+{
+  "repository": "yoyo-mical/Sim-Timing-Tools-HTML",
+  "branch": "feature/shared-authorization",
+  "commit": "c531b86dacdcbb16713d113bded80f75e95fa5cf",
+  "moduleVersion": "1.0.1",
+  "files": {
+    "Licensing.cs": "88ba870544243ab5ef2a79d58ec6691c561063749a93dd45a7f55601302011c5",
+    "IssuerPublicKey.cs": "ed61214da7fe0f236c0edd53b1afbbb76cfaede8ac3bd7fb9bc1df6613bc940e",
+    "AuthorizationHistory.cs": "d8770338a51f813424fd8322c0ffe05e56b25534e19a827535e96e3afe0017f5"
+  }
+}

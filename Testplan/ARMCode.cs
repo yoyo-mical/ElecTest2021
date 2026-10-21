@@ -27,6 +27,7 @@ namespace Testplan
         public ARMCode()
         {
             InitializeComponent();
+            ApplyWorkspaceLayout();
             fs.strevent += new strdelegate(codeEditControl);
             fs.strevent1 += new strdelegate(Bestvcomcode);
             fs.intintstrstrevent += new intintstrstrdelegate(dataAdd);
@@ -228,6 +229,7 @@ namespace Testplan
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             try
             {
                 if (code == "null")
@@ -338,6 +340,7 @@ namespace Testplan
         //private int cindex;
         private void dataAdd(int i, int n,string code,string data)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (i == 0)
             {
                 rindex = dataGridView2.Rows.Add();
@@ -368,6 +371,7 @@ namespace Testplan
 
         private void dataColAdd(int i,string str)
         {
+            if (!AppLicense.AllowOperation()) return;
    
                 int colint = 2* i;
                 string colstr1 = "Column" + colint+1;
@@ -398,6 +402,7 @@ namespace Testplan
 
         private void armCodeSend(string code)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (UART.isOpen == true)
             {
                 int n = 0;
@@ -451,6 +456,7 @@ namespace Testplan
             saveFileDialog.Title = "保存";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
+                if (!AppLicense.AllowOperation()) return false;
                 Stream stream = saveFileDialog.OpenFile();
                 StreamWriter sw = new StreamWriter(stream, System.Text.Encoding.GetEncoding(-0));
                 string strLine = "";
@@ -503,11 +509,13 @@ namespace Testplan
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             dataGridViewToCSV(dataGridView2);
         }
 
         private void saveCsv(string path,string name)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (dataGridView2.Rows.Count == 0)
             {
                 MessageBox.Show("没有数据可导出!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);

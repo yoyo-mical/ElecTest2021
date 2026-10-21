@@ -25,6 +25,7 @@ namespace Testplan
         public Control()
         {
             InitializeComponent();
+            ApplyWorkspaceLayout();
             fs.strevent += new strdelegate(patterntext);
             tooltip1.SetToolTip(pictureBox1,"从头开始运行");
             tooltip1.SetToolTip(pictureBox2, "格式刷");
@@ -53,6 +54,7 @@ namespace Testplan
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (ns2 == 1 && ns3 == 1)
             {
                 MainForm.ImageSwitch(sender, Convert.ToInt16(((PictureBox)sender).Tag.ToString()), ns1);
@@ -90,6 +92,7 @@ namespace Testplan
 
         private void pictureBox10_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (ns1 == 1 && ns3 == 1)
             {
 
@@ -124,6 +127,7 @@ namespace Testplan
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (ns1 == 1 && ns2 == 1)
             {
                 //MainForm.ImageSwitch(sender, Convert.ToInt16(((PictureBox)sender).Tag.ToString()), ns3);
@@ -453,6 +457,8 @@ namespace Testplan
         private string reset = "AA 97 0F 00 12 48";
         private void controlCodeRun(string str)
         {
+            if (!AppLicense.AllowOperation()) return;
+            DataChart.CurrentTest = str.Trim();
             switch (str)
             {
                 case " Delay":
@@ -1299,6 +1305,7 @@ namespace Testplan
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (richTextBox1.Text == "")
                 return;
             saveFileDialog1.DefaultExt = "txt";
@@ -1310,6 +1317,7 @@ namespace Testplan
             if (saveFileDialog1.ShowDialog() == DialogResult.OK && FileName.Length > 0)
             {
                 // Save the contents of the RichTextBox into the file.
+                if (!AppLicense.AllowOperation()) return;
                 richTextBox1.SaveFile(saveFileDialog1.FileName, RichTextBoxStreamType.PlainText);
                 MessageBox.Show("文件已成功保存");
             }
@@ -1317,15 +1325,18 @@ namespace Testplan
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             openFileDialog1.Filter = "文本文件(*.txt)|*.txt|所有文件(*.*)|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string fName = openFileDialog1.FileName;
+                if (!AppLicense.AllowOperation()) return;
                 richTextBox1.LoadFile(fName, RichTextBoxStreamType.PlainText);
             }
         }
         private void armCodeSend(string code)
         {
+            if (!AppLicense.AllowOperation()) return;
             if (UART.isOpen == true)
             {
                 int n = 0;

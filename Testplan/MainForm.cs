@@ -19,47 +19,7 @@ namespace Testplan
         {
             InitializeComponent();
 
-            //StartForm startForm = new StartForm();
-
-            //startForm.Show();
-            //startForm.Visible = true;
-
-            //System.Threading.Thread.Sleep(5000);
-
-            ////startForm.Close();
-
-            this.WindowState = FormWindowState.Minimized;
-
-
-            var f2 = new UART() { TabText = "UART" };
-            f2.Show(this.dockPanel1);
-            f2.DockTo(this.dockPanel1, DockStyle.Left);
-            f2.DockPanel.DockLeftPortion =0.19;
-          
-            var ca310 = new CA410() { TabText = "CA410" };
-            ca310.Show(this.dockPanel1);
-            ca310.DockTo(this.dockPanel1,DockStyle.Left);
-
-            var  armcode = new ARMCode() { TabText = "ARMCode" };
-            armcode.Show(this.dockPanel1, DockState.Document);
-           
-           var control = new Control() { TabText = "Control" };
-            control.Show(armcode.Pane,DockAlignment.Bottom,0.48);
-
-            var datachart = new DataChart() { TabText = "DataChart" };
-            datachart.Show(armcode.Pane, DockAlignment.Right, 0.53);
-
-            var pattern= new Pattern() { TabText = "Pattern" };
-            pattern.Show(this.dockPanel1);
-            pattern.DockTo(this.dockPanel1, DockStyle.Right);
-            pattern.DockPanel.DockRightPortion = 0.25;
-
-            
-
-  
-
-            this.MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
-            this.WindowState = FormWindowState.Maximized;
+            InitializeWorkspace();
 
         }
         public static PictureBox temp = new PictureBox();

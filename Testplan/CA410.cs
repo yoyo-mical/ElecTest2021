@@ -63,6 +63,7 @@ namespace Testplan
         public CA410()
         {
             InitializeComponent();
+            ApplyWorkspaceLayout();
         }
 
         private void CA310_Load(object sender, EventArgs e)
@@ -72,17 +73,22 @@ namespace Testplan
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
             try
             {
+                sdkOperationFailed = false;
+                ShowDeviceState("正在连接…", false);
                 Thread.Sleep(500);
                 AutoConnect();
                 DefaultSetting();
                 button1.BackColor = Color.FromArgb(255, 255, 0);
+                ShowDeviceState(sdkOperationFailed ? "连接或初始化失败" : "仪器已连接", !sdkOperationFailed);
 
 
             }
             catch(Exception er)
             {
+                ShowDeviceState("仪器操作失败 · " + er.Message, false);
                 DisplayError(er);
             }
         }
@@ -111,16 +117,19 @@ namespace Testplan
             }
             catch (Exception er)
             {
+                ShowDeviceState("仪器操作失败 · " + er.Message, false);
                 DisplayError(er);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (!AppLicense.AllowOperation()) return;
 
             try
             {
                 Measurement();                 
+                if (!AppLicense.AllowOperation()) return;
                 Ca_Lv.Text = Convert.ToString(Lv);
                 Ca_sx.Text = Convert.ToString(sx);
                 Ca_sy.Text = Convert.ToString(sy);
@@ -132,6 +141,7 @@ namespace Testplan
             }
             catch (Exception er)
             {
+                ShowDeviceState("仪器操作失败 · " + er.Message, false);
                 DisplayError(er);
             }
         }
@@ -140,6 +150,7 @@ namespace Testplan
         {
             button1.BackColor = Color.FromArgb(255, 255, 255);
             Disconnect();
+            ShowDeviceState("仪器未连接", false);
         }
 
         ///<summary>
@@ -263,6 +274,7 @@ namespace Testplan
         ///</summary>
         public static void Measurement()
         {
+            if (!AppLicense.AllowOperation()) return;
             //SetZeroCalEvent();
             int chnum = 0;      //CalibrationCH : 1
             GetErrorMessage(objMemory.put_ChannelNO(chnum));
@@ -520,6 +532,7 @@ namespace Testplan
         ///<param name = "errornum">Error number from API of SDK</param>
         private static void GetErrorMessage(int errornum)
         {
+            if (errornum != NOERR) sdkOperationFailed = true;
             string errormessage = "";
             if (errornum != 0)
             {

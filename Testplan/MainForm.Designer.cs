@@ -71,7 +71,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 42);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Elec-Test";
+            this.label1.Text = "ElecTest2026";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // pictureBox2
@@ -147,7 +147,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Testplan1.0";
+            this.Text = "ElecTest2026";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Title.ResumeLayout(false);
             this.Title.PerformLayout();

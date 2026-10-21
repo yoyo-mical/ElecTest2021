@@ -18,6 +18,7 @@ namespace Testplan
         public DataChart()
         {
             InitializeComponent();
+            ApplyWorkspaceLayout();
             fs.intevent+= new intdelegate(seriesAdd);
             fs.intstrstrevent += new intstrstrdelegate(chartAdd);
         }
@@ -29,18 +30,22 @@ namespace Testplan
 
         private void seriesAdd(int i)
         {
+            if (!AppLicense.AllowOperation()) return;
             chart1.Series.Clear();
             chart1.Series.Add(i.ToString());
             Series series = chart1.Series[i];
-            series.ChartType = SeriesChartType.Spline;
+            StyleSeries(series);
             series.BorderWidth = 2;
-            series.Color = Color.Black;
+            series.Color = WorkspaceStyle.Accent;
             series.LegendText = "";
+            foreach(ChartArea area in chart1.ChartAreas){area.AxisX.Title=CurrentTest=="Gamma"?"采样序号":"参数码值（HEX 标签）";area.AxisY.Title=CurrentTest=="VCOM"?(CA410.FMAcheck=="true"?"FMA · %":"JEITA · dB"):"Lv · cd/m²";}
         }
 
         private void chartAdd(int i,string x,string y)
         {
+            if (!AppLicense.AllowOperation()) return;
             chart1.Series[i].Points.AddXY(x, y);
+            HighlightLatest(chart1.Series[i]);
         }
 
         private void Timer_Tick(object sender, EventArgs e)

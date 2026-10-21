@@ -259,3 +259,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+# Issued authorization data belongs on the administrator-managed share.
+*.license.json
+*.private.xml
+*.key
+
+/Testplan/licenses/
