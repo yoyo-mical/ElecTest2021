@@ -8,5 +8,6 @@
 - `Testplan/Authorization/`：固定 ElecTest2026 产品的公共校验模块，仅含公钥。
 - `design-preview/`：独立设计演示；`web-preview/`：浏览器桥接测试截图。
 - [当前接入与构建说明](docs/WEBVIEW-INTEGRATION.md)。
+- [授权防篡改、混淆与签名发布](docs/RELEASE-HARDENING.md)。
 
 当前交付为源码检查点。云端缺少厂商 SDK 和 Windows 运行环境，尚未生成经过硬件验收的发布包。授权管理工具继续由 Sim-Timing 环境维护。

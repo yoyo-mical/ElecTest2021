@@ -27,12 +27,13 @@ namespace Testplan {
             try {
                 if (string.IsNullOrWhiteSpace(path)) throw new IOException("请设置 ElecTest2026 授权名单路径。");
                 var full = Path.GetFullPath(Path.IsPathRooted(path) ? path : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path));
+                WebIntegrity.Ensure();
                 await Gate.RefreshAsync(full);
                 Gate.Ensure();
             } catch (Exception ex) { Lock(ex.Message); throw; }
         }
         internal static void Ensure() {
-            try { Gate.Ensure(); }
+            try { WebIntegrity.Ensure(); Gate.Ensure(); }
             catch (Exception ex) { Lock(ex.Message); throw; }
         }
         internal static bool AllowOperation() {

@@ -42,3 +42,7 @@ args+=['-r:'+str(root/'packages/Microsoft.Web.WebView2.1.0.4258.31/lib/net462/Mi
 args+=['-resource:'+str(p)+','+p.name for p in resources]
 subprocess.run(args+[str(p) for p in files],check=True)
 print('PASS managed integration compilation (temporary dynamic SDK substitute; not a production build):',out)
+
+# The backend validates shipped UI even in test assemblies; no integrity bypass.
+import shutil
+shutil.copytree(src / "Web", out / "Web", dirs_exist_ok=True)

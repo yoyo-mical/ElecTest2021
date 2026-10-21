@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Obfuscator>
+  <Var name="InPath" value="../Testplan/bin/Release" />
+  <Var name="OutPath" value="../artifacts/obfuscated" />
+  <Var name="KeepPublicApi" value="true" />
+  <Var name="HidePrivateApi" value="true" />
+  <Var name="HideStrings" value="true" />
+  <Var name="RenameFields" value="true" />
+  <Var name="RenameProperties" value="true" />
+  <Module file="$(InPath)/ElecTest2026.exe">
+    <SkipType name="Testplan.WebRequest" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="Testplan.WebArguments" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="Testplan.WebTextRun" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="Testplan.WebPoint" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="Testplan.WebState" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="Testplan.WebReply" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="Testplan.LicenseSettings" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="SharedAuthorization.Grant" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="SharedAuthorization.LicenseList" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="SharedAuthorization.SignedLicense" skipMethods="true" skipFields="true" skipProperties="true" />
+    <SkipType name="Testplan.Properties.*" skipMethods="true" skipFields="true" skipProperties="true" />
+  </Module>
+</Obfuscator>

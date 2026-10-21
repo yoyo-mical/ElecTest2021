@@ -43,7 +43,8 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -146,6 +147,8 @@
     <Compile Include="WebHost\WorkspaceBackend.cs" />
     <Compile Include="WebHost\WebWorkspaceForm.cs" />
     <Compile Include="WebHost\BrowserRuntime.cs" />
+    <Compile Include="Authorization\WebIntegrity.cs" />
+    <Compile Include="Authorization\WebIntegrityData.cs" />
     <Compile Include="Authorization\AppLicense.cs" />
     <Compile Include="Authorization\Shared\Licensing.cs" />
     <Compile Include="Authorization\Shared\IssuerPublicKey.cs" />

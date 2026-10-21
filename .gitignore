@@ -265,3 +265,5 @@ __pycache__/
 *.key
 
 /Testplan/licenses/
+
+/artifacts/

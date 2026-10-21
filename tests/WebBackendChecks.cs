@@ -29,7 +29,10 @@ class WebBackendChecks {
             var hostile=Request("set",new Dictionary<string,string>{{"arm.script","</script><script>alert(1)</script>"}});reply=backend.Execute(hostile);Check(reply.state.script==hostile.args.fields["arm.script"],"script-like editor text stays data in C#");
             AppLicense.Lock("test expiry");Denied(()=>backend.Execute(Request("recipe.run")),"expired authorization blocks execution");Denied(()=>backend.Snapshot(),"expired authorization blocks result publication");backend.Stop();Check(true,"stop remains callable after expiry");
         }
-        var subscriptions=typeof(FormShare).GetField("intevent",BindingFlags.NonPublic|BindingFlags.Instance).GetValue(DataChart.fs) as Delegate;Check(subscriptions==null,"backend disposes chart event subscription");
+        intdelegate reset = i => {}; intstrstrdelegate sample = (i,x,y) => {};
+        DataChart.fs.intevent += reset; DataChart.fs.intstrstrevent += sample;
+        try { DataChart.fs.intEdit(0); DataChart.fs.intstrstrEdit(0,"10","12.5"); Check(true,"disposed backend no longer checks revoked authorization on chart events"); }
+        finally { DataChart.fs.intevent -= reset; DataChart.fs.intstrstrevent -= sample; }
         AppLicense.Dispose();Console.WriteLine("PASS "+count+" native bridge/backend checks; no device commands or SDK measurements executed");
     }
 }

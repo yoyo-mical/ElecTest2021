@@ -17,6 +17,19 @@ with tempfile.TemporaryDirectory(prefix='elec-web-backend-') as work:
  subprocess.run(['python3',str(root/'tests/compile-portable.py')],env=env,check=True,stdout=subprocess.DEVNULL)
  subprocess.run(['cp',str(root/'packages/DockPanelSuite.3.0.6/lib/net40/WeifenLuo.WinFormsUI.Docking.dll'),str(d/'build')],check=True)
  subprocess.run(['cp',str(root/'packages/DockPanelSuite.ThemeVS2015.3.0.6/lib/net40/WeifenLuo.WinFormsUI.Docking.ThemeVS2015.dll'),str(d/'build')],check=True)
+ # Optional test of the actual obfuscator against the same backend checks.
+ obfuscator=os.environ.get('ELEC_OBFUSCAR')
+ if obfuscator:
+  import shutil,xml.etree.ElementTree as ET
+  for dll in (root/'packages/Microsoft.Web.WebView2.1.0.4258.31/lib/net462').glob('*.dll'):shutil.copy2(dll,d/'build')
+  tree=ET.parse(root/'security/obfuscar.xml')
+  for var in tree.getroot().findall('Var'):
+   if var.attrib['name']=='InPath':var.set('value',str(d/'build'))
+   if var.attrib['name']=='OutPath':var.set('value',str(d/'obfuscated'))
+  tree.getroot().find('Module').set('file',str(d/'build/ManagedCompileOnly.exe'))
+  config=d/'obfuscar.xml';tree.write(config)
+  subprocess.run(['mono',obfuscator,str(config)],check=True)
+  shutil.copy2(d/'obfuscated/ManagedCompileOnly.exe',d/'build/ManagedCompileOnly.exe')
  subprocess.run(['xvfb-run','-a','-s','-screen 0 1600x980x24','mono',str(d/'build/ManagedCompileOnly.exe'),str(license)],check=True)
  assert before=={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in shared.glob('*.cs')}
  print('PASS production shared sources unchanged; temporary key/fixture removed')

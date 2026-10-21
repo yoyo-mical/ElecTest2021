@@ -28,6 +28,7 @@ namespace Testplan {
         }
         private async Task StartBrowser(){
             try{
+                WebIntegrity.Ensure();
                 path=AppLicense.ReadSettings().licensePath??"";
                 var assets=Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"Web");
                 if(!File.Exists(Path.Combine(assets,"index.html")))throw new IOException("缺少 Web 界面文件，请完整解压程序包。");
