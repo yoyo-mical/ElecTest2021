@@ -1,3 +1,9 @@
+## 串口交互 HTML 提案（2026-11-13）
+
+[下载单文件 HTML 预览包](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-serial-ui-preview-20261113.zip)
+
+约437 KiB；解压后双击HTML。仅演示：接收/发送独立模式、原字节HEX/ASCII回看、复制和仅清接收、手动HEX/ASCII文本与结尾选项。不会连接真实设备。本提案尚未更新桌面r5。原Sites网址因当前客户端发布凭据功能不可用，尚未部署此次修改。
+
 ## 最新桌面测试包（2026-11-13，r5）
 
 [下载 ElecTest2026 桌面版 r5](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-desktop-20261113-r5.zip)
