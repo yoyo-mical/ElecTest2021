@@ -1,4 +1,14 @@
-## 最新桌面测试包（2026-11-13，r6）
+## 最新桌面测试包（2026-11-13，r7）
+
+[下载 ElecTest2026 桌面版 r7](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-desktop-20261113-r7.zip)
+
+3,069,191 字节，约3.07 MB。SHA256：`f0348ccba6577ace4501fa324dc8be3d2cd514c08908bbf05d0902fa987aa1a7`
+
+仪器断开按钮与打开串口采用相同主题颜色；删除Pattern输出分辨率；原32图案参照用户图排序，保留原ID/资源/协议Tag。参考中额外预设记录在更新清单D-026，未冒充已有图案。浏览器三主题/三尺寸、协议与包结构检查通过；Windows/仪器待实测。完整解压到新目录，需要有效授权与原运行环境。
+
+[本轮说明](docs/DESKTOP-R7-20261113.md) · [桌面更新清单](docs/DESKTOP-UPDATE-TRACKER.md)
+
+## 之前桌面测试包（2026-11-13，r6）
 
 [下载 ElecTest2026 桌面版 r6](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-desktop-20261113-r6.zip)
 
