@@ -1,3 +1,13 @@
+## 最新桌面测试包（2026-11-13，r5）
+
+[下载 ElecTest2026 桌面版 r5](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-desktop-20261113-r5.zip)
+
+约 3.05 MB；完整解压到新目录运行根目录 ElecTest2026.exe。需有效授权及原运行环境。
+
+[本轮更新与验证范围](docs/DESKTOP-R5-20261113.md) · [桌面更新清单](docs/DESKTOP-UPDATE-TRACKER.md)
+
+已同步内部 split、ASCII、RGB/Gray 分组、Sheet 和经典深蓝；运行调度已调整，Windows/WebView2 停止响应及硬件仍需本机验证。以下原有源码检查点说明不代表此 ZIP 的版本。
+
 # ElecTest2026
 
 基于 ElecTest2021 升级的电性测试工具，署名 Design by Wuhao Studio。当前入口采用 **C# WinForms 宿主 + WebView2 HTML 界面**，复用已确认的设计与原 C# 业务操作。
