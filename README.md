@@ -1,18 +1,16 @@
-## 串口交互 HTML 提案（2026-11-13）
+## 最新桌面测试包（2026-11-13，r6）
 
-[下载单文件 HTML 预览包](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-serial-ui-preview-20261113.zip)
+[下载 ElecTest2026 桌面版 r6](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-desktop-20261113-r6.zip)
 
-约437 KiB；解压后双击HTML。仅演示：接收/发送独立模式、原字节HEX/ASCII回看、复制和仅清接收、手动HEX/ASCII文本与结尾选项。不会连接真实设备。本提案尚未更新桌面r5。原Sites网址因当前客户端发布凭据功能不可用，尚未部署此次修改。
+3,068,921 字节，约3.07 MB；完整解压到新目录运行根目录 ElecTest2026.exe。需有效授权及原运行环境。
 
-## 最新桌面测试包（2026-11-13，r5）
+SHA256：`37b30c30f1a27e69be2b8857a1dcc39f559d07bcfc94fef44649e4baef77aa76`
 
-[下载 ElecTest2026 桌面版 r5](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-desktop-20261113-r5.zip)
+[本轮更新与验证范围](docs/DESKTOP-R6-20261113.md) · [桌面更新清单](docs/DESKTOP-UPDATE-TRACKER.md)
 
-约 3.05 MB；完整解压到新目录运行根目录 ElecTest2026.exe。需有效授权及原运行环境。
+同步 HTML 评审版7的串口独立收发、三处split、六面板展开、测量结果多视图及导出、脚本指令表、面板内操作条、安全边界暂停/继续和原生退出确认。使用真实C#桥接，不含网页模拟设备/测量生成器。40项混淆后后端、虚拟串口字节、浏览器交互与包结构检查通过；Windows/WebView2与真实硬件仍需本机验收。
 
-[本轮更新与验证范围](docs/DESKTOP-R5-20261113.md) · [桌面更新清单](docs/DESKTOP-UPDATE-TRACKER.md)
-
-已同步内部 split、ASCII、RGB/Gray 分组、Sheet 和经典深蓝；运行调度已调整，Windows/WebView2 停止响应及硬件仍需本机验证。以下原有源码检查点说明不代表此 ZIP 的版本。
+上一版 [r5](https://github.com/yoyo-mical/ElecTest2021/raw/refs/heads/downloads/local-build-20261021/ElecTest2026-desktop-20261113-r5.zip) 保留用于回退。以下原有源码检查点说明不代表此 ZIP 的版本。
 
 # ElecTest2026
 
