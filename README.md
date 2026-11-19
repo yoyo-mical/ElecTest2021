@@ -1,8 +1,8 @@
 # ElecTest2026 便携桌面包
 
-最新：[下载r14](https://raw.githubusercontent.com/yoyo-mical/ElecTest2021/desktop-downloads/ElecTest2026-desktop-20261119-r14.zip) · 3,113,780字节（约3.11 MB）
+最新：[下载r14修订包](https://raw.githubusercontent.com/yoyo-mical/ElecTest2021/desktop-downloads/ElecTest2026-desktop-20261119-r14.zip) · 3,114,654字节（约3.11 MB）。同名r14已替换：设备信息FW明确为ARM驱动程序，表头取消FW。
 
-SHA256：`ead5bc604caed4a7da2ee1c970b94e6b5dde98e97232b20688cfae7ded6e98b5`
+当前SHA256：`745b0607a254c9364f9f6135c890c3765ce36924bde40ad7fdf6083b629ee803`
 
 # ElecTest2026 桌面版 r14 — 2026-11-19
 
@@ -42,6 +42,26 @@ Run Code仍保持原替换与整份下发逻辑，弹窗中参数值不代表设
 - 本轮七项专项界面检查与r12/实时滚动/设备信息/整体缩放/曲线坐标回归通过；Run Code确认逻辑覆盖取消、Escape、不再提示跨加载记忆及恢复。
 - 真实厂商SDK编译0错误、17条既有警告；源码提交38d35c8；Obfuscar 2.2.50（HideStrings=false）保护完成，私有映射不随包发布。
 - 原生x86启动器重新构建，与主程序继续使用同源RGB芯片图标。
+
+
+## 首次发布记录（已由同名r14修订包替换）
+
+- 构建源码：38d35c8c6c7d5ba5781ba2fa6e741fec9782dd63；真实SDK、x86、Obfuscar保护。
+- 最终ZIP实际解压核对三项根目录、原生/托管x86入口、同源图标、Web同步、SHA256清单及无源码/PDB/私有映射通过。
+- 下载分支提交：aad83b9，旧r13及其它历史包保留。
+- 文件：ElecTest2026-desktop-20261119-r14.zip；3,113,780字节（约3.11 MB / 2.97 MiB）。
+- SHA256：ead5bc604caed4a7da2ee1c970b94e6b5dde98e97232b20688cfae7ded6e98b5。
+- 下载：https://raw.githubusercontent.com/yoyo-mical/ElecTest2021/desktop-downloads/ElecTest2026-desktop-20261119-r14.zip
+- 校验：https://raw.githubusercontent.com/yoyo-mical/ElecTest2021/desktop-downloads/ElecTest2026-desktop-20261119-r14.zip.sha256
+
+已匿名回下载公开地址，大小与SHA256同本地最终ZIP一致。私有混淆文件仅留本地artifacts/private-obfuscation-20261119-r14，未上传源码分支或私有映射。
+
+
+## r14同名修订 — ARM驱动程序FW标注
+
+用户确认开机CODE VERSION为ARM驱动程序FW，并明确授权保持r14版本号、替换同名下载文件。设备信息弹窗改为“ARM 驱动程序 FW”，主界面表头移除FW，仅按捕获显示Project和IC；只有FW时表头不占位，仍可从设备信息查看。日志提取、原始值和设备指令不变。
+
+此修订沿用原r14全部功能；针对两类日志的弹窗/表头、缺失和零值、实时更新、主题及布局验证通过，重新构建实际SDK程序及保护、核对最终ZIP后替换。上方首次发布的大小/哈希仅为历史记录，以随包同名.sha256及下方修订发布记录为准。
 
 ## 历史版本
 
