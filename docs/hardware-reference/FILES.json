@@ -8,5 +8,15 @@
     "file": "FPGA_Pattern_Automotive_V1.1.pdf",
     "sizeBytes": 876514,
     "sha256": "f9a17a29b5f95c45c571e57a8d68c13ce18ac619bf382a71ac33de0ff030bb94"
+  },
+  {
+    "file": "指令表-指令说明示例帧.xlsx",
+    "sizeBytes": 18015,
+    "sha256": "4dd26e3ea3b53525af6d8f13dd9bc87dc663def1dcd5806008ca10b31b88aa80"
+  },
+  {
+    "file": "FPGA_Pattern_Automotive_V3.0.xlsx",
+    "sizeBytes": 1346860,
+    "sha256": "88195565d0e3e60d6343039459376ce9d218a03be5f524b294c949d2412e2c39"
   }
 ]
