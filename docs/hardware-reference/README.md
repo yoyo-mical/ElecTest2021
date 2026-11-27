@@ -11,3 +11,5 @@
 - [FPGA_Pattern_Automotive_V3.0.xlsx](FPGA_Pattern_Automotive_V3.0.xlsx)：FPGA Pattern V3.0参考资料；旧V1.1文档保留。
 
 文件大小及SHA-256见 [FILES.json](FILES.json)。资料仅保存供后续核对，本次没有据此修改设备指令、执行顺序、延时或采样逻辑。
+
+- [code recipe.xlsx](code%20recipe.xlsx)：Code 与 Recipe 参考资料。

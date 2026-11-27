@@ -18,5 +18,10 @@
     "file": "FPGA_Pattern_Automotive_V3.0.xlsx",
     "sizeBytes": 1346860,
     "sha256": "88195565d0e3e60d6343039459376ce9d218a03be5f524b294c949d2412e2c39"
+  },
+  {
+    "file": "code recipe.xlsx",
+    "sizeBytes": 14809,
+    "sha256": "becab54381a6533df3ff5b9624c7162992b5bcdb9dabea21d1b0b772f834cd9e"
   }
 ]
